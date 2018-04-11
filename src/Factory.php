@@ -7,8 +7,11 @@ use Psr\Container\ContainerInterface;
 
 class Factory implements FactoryInterface
 {
+    /** @var DispatcherInterface */
     private $middlewareDispatcher;
+    /** @var ContainerInterface */
     private $container;
+    /** @var array|iterable */
     private $middlewares = [];
 
     /**
