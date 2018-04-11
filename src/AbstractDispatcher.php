@@ -20,7 +20,7 @@ abstract class AbstractDispatcher implements DispatcherInterface
         $this->responseFactory = $responseFactory;
     }
 
-    public function setMiddlewares(array $middlewares)
+    public function addMiddlewares(array $middlewares)
     {
         foreach ($middlewares as &$middleware) {
             if (is_string($middleware)) {

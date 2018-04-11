@@ -9,9 +9,9 @@ use Psr\Http\Server\MiddlewareInterface;
 
 interface DispatcherInterface
 {
-	const DEFAULT_PRIORITY = 1000;
+    const DEFAULT_PRIORITY = 1000;
 
-    public function setMiddlewares(array $middlewares);
+    public function addMiddlewares(array $middlewares);
 
     public function addMiddleware(MiddlewareInterface $middleware, int $priority = self::DEFAULT_PRIORITY);
 
