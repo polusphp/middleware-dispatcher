@@ -51,7 +51,7 @@ class Factory implements FactoryInterface
         } elseif (count($this->middlewares)) {
             $middlewares = $this->middlewares;
         }
-        $dispatcher->setMiddlewares($middlewares);
+        $dispatcher->addMiddlewares($middlewares);
         return $dispatcher;
     }
 }
