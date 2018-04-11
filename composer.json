@@ -1,7 +1,7 @@
 {
-    "name": "polus/aura-router",
-    "description": "aura router for polus",
-    "homepage": "https://github.com/polusphp/aura-router",
+    "name": "polus/middleware-dispatcher",
+    "description": "base package for the middleware dispatcher for PolusPHP",
+    "homepage": "https://github.com/polusphp/middleware-dispatcher",
     "license": "MIT",
     "authors": [
         {
@@ -10,16 +10,19 @@
         }
     ],
     "require": {
-        "php": ">=7.1.0",
-        "aura/router": "~3.0",
-        "polus/router": "~3.0",
-        "psr/http-message": "~1.0"
+        "php": ">=7.2.0",
+        "psr/container": "^1.0",
+        "psr/http-message": "^1.0",
+        "psr/http-server-middleware": "^1.0",
+        "http-interop/http-factory": "^0.3.0"
     },
-    "require-dev": {
+    "suggest": {
+        "polus/relay-middleware-dispatcher": "Middleware dispatching with RelayPHP",
+        "polus/ellipse-middleware-dispatcher": "Middleware dispatching with EllipsePHP"
     },
     "autoload": {
         "psr-4": {
-            "Polus\\Router\\AuraRouter\\": "src/"
+            "Polus\\MiddlewareDispatcher\\": "src/"
         }
     }
 }
