@@ -35,4 +35,9 @@ abstract class AbstractDispatcher implements DispatcherInterface
     {
         $this->middlewares->insert($middleware, $priority);
     }
+    
+    public function __clone()
+    {
+        $this->middlewares = clone $this->middlewares;
+    }
 }

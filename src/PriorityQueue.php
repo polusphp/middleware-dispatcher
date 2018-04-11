@@ -7,7 +7,9 @@ use Psr\Http\Server\MiddlewareInterface;
 
 class PriorityQueue implements \Countable, \IteratorAggregate
 {
+    /** @var int */
     protected $queueOrder = PHP_INT_MAX;
+    /** @var \SplPriorityQueue */
     protected $innerQueue;
     
     public function __construct()
@@ -33,5 +35,10 @@ class PriorityQueue implements \Countable, \IteratorAggregate
     public function toArray()
     {
 		return iterator_to_array($this->getIterator());
+    }
+
+    public function __clone()
+    {
+        $this->innerQueue = clone $this->innerQueue;
     }
 }
