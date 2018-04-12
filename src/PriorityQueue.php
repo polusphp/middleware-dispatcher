@@ -22,7 +22,11 @@ class PriorityQueue implements \Countable, \IteratorAggregate
         return count($this->innerQueue);
     }
 
-    public function insert(MiddlewareInterface $middleware, int $priority)
+	/**
+	 * @param MiddlewareInterface|string $middleware
+	 * @param int $priority
+	 */
+    public function insert($middleware, int $priority)
     {
         $this->innerQueue->insert($middleware, [$priority, $this->queueOrder--]);
     }

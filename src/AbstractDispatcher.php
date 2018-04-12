@@ -23,10 +23,6 @@ abstract class AbstractDispatcher implements DispatcherInterface
     public function addMiddlewares(array $middlewares)
     {
         foreach ($middlewares as &$middleware) {
-            if (is_string($middleware)) {
-                $cls = $middleware;
-                $middleware = new $cls();
-            }
             $this->middlewares->insert($middleware, self::DEFAULT_PRIORITY);
         }
     }
