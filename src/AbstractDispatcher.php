@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Polus\MiddlewareDispatcher;
 
-use Interop\Http\Factory\ResponseFactoryInterface;
+use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Server\MiddlewareInterface;
 
 abstract class AbstractDispatcher implements DispatcherInterface
